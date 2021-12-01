@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap');
+
+:root{
+    --amarillo:#0A3143;
+    --rojo: #276E90;
+    --degradado: linear-gradient(90deg, var(--rojo), var(--amarillo));
+}
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    /*text-transform: capitalize; quitando mayus de iniciales*/
+}
+
+*::selection{ /*definiendo tono*/
+    background: var(--amarillo);
+    color:black;
+}
+
+html{ /**/
+    font-size: 62.4%;
+    overflow: hidden;
+}
+
+body{
+    background: whitesmoke;
+}
+
+section{ /*primer section*/
+    min-height: 100vh;
+    padding: 0 9%;
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+}
+
+.btn {
+
+    display: inline-block;
+    margin-top: 1rem;
+    padding: .9rem 2rem;
+    border-radius: 5rem;
+    background: #FBAA08;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer; 
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) ;
+    transition: all .3s linear; /*se ocupa para el HOVER abajo*/
+
+}
+
+.btn:hover{ /*efecto boton*/
+    transform: scale(1.1);
+}
+
+
+header{/*posicionar elementos de manera flexible*/
+    position:relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: whitesmoke;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    padding: 2rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+
+
+header .logo{/*oficio*/
+    font-size: 3rem;
+    color: var(--amarillo);
+
+}
+
+header .logo span{/*express*/
+    color: var(--rojo);
+}
+
+header .navbar a{/*barra y nombres*/
+    font-size: 2.1rem;
+    margin-left: 2rem;
+    color: var(--rojo)
+}
+
+header .navbar a:hover{
+    color:var(--amarillo);
+}
+
+header input{/*desaparecer checbox*/
+    display: none;
+}
+
+header label{/*icono hambur*/
+    font-size: 3rem;
+    color: var(--rojo);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0; /*desaparece*/
+}
+
+
+.inicio{ /*section y fondo1*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(img/fondo2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.inicio .image img{ /*macuin*/
+width: 40vw;
+
+animation: float 3s linear infinite;
+}
+
+
+
+@keyframes float{ /*metodo de traslación para la macuin*/
+    0%, 100%{
+        transform: translateY(0rem);
+    }
+
+    50%{
+        transform: translateY(-3.5rem);
+    }
+}
+
+
+.inicio .content h3{ /*soluciones a la mano*/
+    font-size: 5.5rem;
+    color: var(--rojo);
+    text-transform: uppercase;
+}
+
+.inicio .content h3 span{
+    color: var(--amarillo);
+    text-transform: uppercase;
+}
+
+.inicio .content p{
+    font-size: 1.7rem;
+    color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+/*header .navbar a{/*31:30 ordenando las opciones en vertical al detectar el responsive*/
+ /*   display: block;
+    margin: 2rem 0;
+    font-size: 2rem;
+}*/
+
+
+@media(max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+
+
+@media(max-width:768px){
+    header label{
+        visibility: visible;/*aparece haburguesa*/
+        opacity: 1;
+    }
+
+
+header .navbar{/*configuracion del header, nombres*/
+    position: absolute;
+    top: 100%;
+    left: 100;
+    width: 100%;
+    background: white;
+    padding: 1rem 2rem;
+    border-top: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+        /*29:45*/
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: .2s linear;    
+}
+
+/*cambios para la hamburguesa y hacer el listado*/
+
+header .navbar a{
+    display: block;
+    margin: 2rem 0;
+    font-size: 2rem;
+
+}
+
+
+
+header input:checked ~ .navbar{/*combinando elementos a la hamburguesa, mandando a traer elementos del navbar*/
+    transform: scaleY(1);/*hacer que los elementos se muevan (los nombres)usando escalas*/
+    opacity: 1;
+
+}
+
+header input:checked ~ label::before{/*creando sub-elemento al dar click en hambur*/
+    content: '\f00d';
+}
+
+
+}/*FINAL*/
+
+
+@media (max-width:450px){
+
+html{
+    font-size: 49%;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

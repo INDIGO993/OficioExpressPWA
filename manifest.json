@@ -1,0 +1,38 @@
+{
+    "name": "OficioExpress",
+    "short_name": "OEX",
+    "description": "Aplicacion Web para la busqueda de oficios",
+    "background_color": "#2B2B2B",
+    "theme_color": "#F0DB4F",
+    "orientation": "portrait",
+    "display": "standalone",
+    "start_url": "./?utm_source=web_app_manifest",
+    "scope": "./",
+    "lang": "es-MX",
+    
+    "icons": [
+      
+
+
+      {
+        "src": "./img/macuin4.png",
+        "sizes": "236x236",
+        "type": "image/png"
+      },
+      {
+        "src": "./img/macuin3.png",
+        "sizes": "413x413",
+        "type": "image/png"
+      },
+      {
+        "src": "./img/macuin2.png",
+        "sizes": "591x590",
+        "type": "image/png"
+      },
+      {
+        "src": "./img/macuin1.png",
+        "sizes": "640x640",
+        "type": "image/png"
+      }
+    ]
+  }
